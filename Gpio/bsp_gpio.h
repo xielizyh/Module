@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * File Name:      err.h
+  * File Name:      bsp_gpio.h
   *
-  * Description:    error header for xxx
+  * Description:    bsp_gpio header for xxx
   * Author:         Xli
   * Revision:       0.0
   * Date:           2018-12-11
@@ -13,8 +13,8 @@
  **/
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __ERROR_H_
-#define __ERROR_H_
+#ifndef __BSP_GPIO_H_
+#define __BSP_GPIO_H_
 
 /* Includes ------------------------------------------------------------------*/
 
@@ -25,12 +25,10 @@ extern "C"{
 /* Exported constants --------------------------------------------------------*/
 /* Exported macros -----------------------------------------------------------*/
 /* Exported action macros ----------------------------------------------------*/
-/* Exported types ------------------------------------------------------------*/
-//err code
-typedef enum{
-  ERR_NONE,             /*无错误*/
-}xli_err_t;
+#define BSP_GPIO_READ(pin)          (gpio_get_level(pin))
+#define BSP_GPIO_WRITE(pin, state)  do{gpio_set_level(pin, state);}while(0)
 
+/* Exported types ------------------------------------------------------------*/
 /* Exported variables ------------------------------------------------------- */
 /* Exported functions ------------------------------------------------------- */
 
@@ -38,4 +36,4 @@ typedef enum{
 }
 #endif
 
-#endif  /* __ERROR_H_ */
+#endif  /* __BSP_GPIO_H_ */
